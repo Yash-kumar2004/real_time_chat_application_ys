@@ -24,7 +24,7 @@ const signup=async (req,res)=>{
         })
 
         if(newUser){
-            
+
         }
         else{
             return res.status(400).json({message:"invalid user data"})
