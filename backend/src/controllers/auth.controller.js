@@ -114,7 +114,7 @@ const updateProfile=async (req,res)=>{
         }
 
         const  uploadResponse =await cloudinary.uploader.upload(profilePic)
-        const updatedUser=await User.findByIdAndDelete(userid,{
+        const updatedUser=await User.findByIdAndUpdate(userid,{
             profilePic:uploadResponse.secure_url
         },
         {new : true})

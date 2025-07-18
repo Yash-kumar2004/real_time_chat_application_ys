@@ -7,7 +7,7 @@ const router=Router()
 router.route("/signup").post(signup)
 router.route("/login").post(login)
 router.route("/logout").post(logout)
-router.route("/update-profile").post(protectroute,updateProfile)
+router.route("/update-profile").put(protectroute,updateProfile)
 router.route("/check").get(protectroute,checkAuth)
 
 export default router
