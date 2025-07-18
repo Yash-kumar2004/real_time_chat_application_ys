@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import toast from "react-hot-toast";
 import axiosInstance from "../lib/axios";
-import { sendMessage } from "../../../backend/src/controllers/message.controller";
 
 export const useChatStore=create((set,get)=>({
     messages: [],
@@ -37,7 +36,13 @@ export const useChatStore=create((set,get)=>({
   sendMessage:async (messsageData)=>{
     const { selectedUser, messages } = get();
     try {
-      const res=axiosInstance.post(`/messages/send/${selectedUser._id}`,messsageData)
+      const res=await axiosInstance.post(`/messages/send/${selectedUser._id}`,messsageData)
+
+      if (!res.data || !res.data.senderId) {
+      toast.error("Server returned invalid message");
+      return;
+    }
+
       set({ messages: [...messages, res.data] });
     } catch (error) {
       toast.error(error.response.data.message);
