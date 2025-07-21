@@ -1,0 +1,13 @@
+{
+  "name": "chat_app",
+  "version": "1.0.0",
+  "description": "A real-time chat application that allows users to send and receive messages instantly using WebSockets. This app supports multiple chat rooms, live user presence, and a responsive UI.",
+  "main": "index.js",
+  "scripts": {
+   "build":"npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+   "start": "npm run start --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
