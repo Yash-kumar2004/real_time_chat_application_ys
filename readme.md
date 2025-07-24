@@ -1,17 +1,17 @@
-# 💬 Real-Time Chat Application
+#  Real-Time Chat Application
 
 A real-time chat application that allows users to send and receive messages instantly using WebSockets. This app supports multiple chat rooms, live user presence, and a responsive UI.
 
-## 🚀 Features
+## Features
 
-- 🔒 User authentication (login/signup)
-- 🧑‍🤝‍🧑 Real-time one-to-one
-- 🌐 Socket.IO for instant communication
-- 📱 Responsive UI with modern design
-- 🟢 Online user status
-- 📅 Chat history persistence
+- User authentication (login/signup)
+- Real-time one-to-one
+- Socket.IO for instant communication
+- Responsive UI with modern design
+- Online user status
+- Chat history persistence
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - React.js / Next.js
