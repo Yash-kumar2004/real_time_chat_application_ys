@@ -54,7 +54,7 @@ const {messages,
           messages .map((message) => (
                 <div
             key={message._id}
-            ref={messageEndRef}s
+            ref={messageEndRef}
             className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
               >
               <div className=" chat-image avatar">
