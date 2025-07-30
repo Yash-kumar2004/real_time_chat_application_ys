@@ -14,9 +14,10 @@ A real-time chat application that allows users to send and receive messages inst
 ## Tech Stack
 
 ### Frontend
-- React.js / Next.js
+- React.js
+- Zustand
 - Tailwind CSS and Daisy UI
-  React-hot-toast and lucide-react
+- React-hot-toast and lucide-react
 - Socket.IO Client
 
 ### Backend
