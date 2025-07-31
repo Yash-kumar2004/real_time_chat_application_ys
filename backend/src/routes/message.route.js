@@ -4,7 +4,7 @@ import {getUsersForSideBar,getmessages,sendMessage} from "../controllers/message
 const router=Router()
 
 router.route("/users").get(protectroute,getUsersForSideBar)
-router.route("/:id").get(protectroute,getmessages)
+router.route("/chat/:id").get(protectroute,getmessages)
 router.route("/send/:id").post(protectroute,sendMessage)
 
 
