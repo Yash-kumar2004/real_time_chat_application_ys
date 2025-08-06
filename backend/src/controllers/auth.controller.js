@@ -3,6 +3,7 @@ import { User } from "../models/user.model.js"
 import generateToken from "../utils/utils.js"
 import bcrypt from "bcryptjs"
 import JWT from 'jsonwebtoken' 
+import { io } from "../lib/socket.js"
 const signup=async (req,res)=>{
     const {fullName,email,password}=req.body
 
@@ -35,11 +36,22 @@ const signup=async (req,res)=>{
              generateToken(newUser._id,res);
             await newUser.save()
 
+
+            io.emit("newUserRegistered", {
+                _id: newUser._id,
+                fullName: newUser.fullName,
+                email: newUser.email,
+                profilePic: newUser.profilePic,
+                createdAt: newUser.createdAt,
+            });
+
+
             res.status(201)
                 .json({ _id: newUser._id,
             fullName: newUser.fullName,
             email: newUser.email,
             profilePic: newUser.profilePic,
+            createdAt: newUser.createdAt,
             })
         }
         else{
