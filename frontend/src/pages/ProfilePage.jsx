@@ -21,11 +21,14 @@ function ProfilePage() {
     };
   }
 
-  const formattedDate = new Date(authUser.createdAt).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+// const formattedDate = authUser?.createdAt
+//   ? new Date(authUser.createdAt).toLocaleDateString("en-US", {
+//       year: "numeric",
+//       month: "long",
+//       day: "numeric",
+//     })
+//   : "";
+
   return (
     <div className="h-full pt-20">
         <div className="max-w-2xl mx-auto p-4 py-8">
@@ -94,8 +97,8 @@ function ProfilePage() {
               <div className="flex items-center justify-between py-2 border-b border-zinc-700">
                 <span>Member Since</span>
                 <span>
-                  {/*authUser.createdAt?.split("T")[0]*/}
-                  {formattedDate}
+                  {authUser.createdAt?.split("T")[0]}
+                  {/* {formattedDate || "Loading..."} */}
                   </span>
               </div>
               <div className="flex items-center justify-between py-2">
